@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> comicbook </title>
+	
+         
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   
+<script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAht6UVlJc_Fo9fwxGqHR3I5x-aikUSio8",
+        authDomain: "comic-6db3d.firebaseapp.com",
+        databaseURL: "https://comic-6db3d.firebaseio.com",
+        storageBucket: "comic-6db3d.appspot.com",
+        messagingSenderId: "559279896200"
+      };
+      firebase.initializeApp(config);
+
+    </script>
+   
+    </head>
+	
+ 	
+    <body  class="fondo" >
+		
+        <header>
+   		
+    <ul id="dropdown1" class="dropdown-content" >
+  <li><a href="#!">Noticias</a></li>
+  <li class="divider"></li>      
+  <li><a href="capitulos.html">Capitulos</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Acerca los autores</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper #000000 black" >
+	
+    <a href="#!" class="brand-logo">	 <li> <img src="img/logo2.png" whid="100px" ></li>  </a>
+    <ul class="right hide-on-med-and-down">
+		
+      <li><a href="personajes.html" >Personajes</a></li>
+      <li><a href="galeriadearte.html">Galeria de arte </a></li>
+      <li><a href="lector.html"> Lector</a></li> 
+      
+        <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">comic<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>                      
+    </header >
+        
+        <main >
+            <!div class="parallax-content">
+            <!img src="img/portada.png">
+            </div>
+    <div>
+     <div class="container row">
+			<div class="col-xs-4">
+				<div id="lista_notas" >
+				</div>
+			</div>
+			<div class="col-xs-8" id="login">
+				
+				<div class="input-group">
+
+					<input type="text" id='user' class="form-control" placeholder="Usuario" aria-describedby="basic-addon1 " style="color: white">
+				</div>
+				<div class="input-group">
+
+					<input id='password' type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1 " style="color: white">
+				</div>
+				
+				<button onclick="login()"class="btn waves-effect waves-light">Login</button>	
+                
+			</div>
+         <div class="col-xs-8" id="logout">
+            <button onclick="firebase.auth().signOut()" class="btn waves-effect waves-light">Logout</button>	    
+         </div>
+         
+		</div>
+        </div>
+          <div class="row">
+            
+              <div class="col s4">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Arte</span>
+              <p>El arte es una combinacion de dibujo tradicional a mano con una edicion digital por computadora.esta combinacion es llevada a cabo por Marcos Sebastian  Savid el dibujante y Cocreador de el comic </p>
+            </div>
+            <div class="card-action">
+              <a href="personajes.html">Personajes</a>
+              <a href="galeriadearte.html">Galeria de arte</a>
+            </div>
+          </div>
+        </div>
+            
+            <div class="col s4">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Historia </span>
+              <p>La idea de esta historia es dar inico a una saga en la que nuestros personajes se desarrollen y vayamos conociendo cada vez mas de estos. la historia esta escrita por Tobias Julian Palacios Isola el otro Cocreador del comic  </p>
+            </div>
+            <div class="card-action">
+              
+              <a href="#">Capitulos</a>
+            </div>
+          </div>
+        </div>
+            
+            <div class="col s4">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">Publicaciones</span>
+              <p>Intetaremos subir los capitulos con la mayor frecuencia posibe pero hay que tener en cuenta que es un arduo trabajo para nosotros que solo somos aficionados por ahora.</p>
+            </div>
+            <div class="card-action">
+              
+              <a href="#">Noticias</a>
+            </div>
+          </div>
+        </div>
+            
+            
+            </div>
+      
+
+    
+             <div class="row">
+        <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/equipo.png" >
+              <span class="card-title black-text text-deep">El Equipo </span>
+            </div>
+            <div class="card-content">
+              <p> Primer boceto del equipo </p>
+            </div>
+            <div class="card-action">
+              <a href="personajes.html">personajes</a>
+            </div>
+          </div>
+    </div>
+          
+              <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/shadow%20y%20roma.jpg" >
+              <span class="card-title black-text text-deep">Shadow y Roma </span>
+            </div>
+            <div class="card-content">
+              <p> arte por Marcos Savid  </p>
+            </div>
+            <div class="card-action">
+              <a href="personajes.html">Personajes</a>
+            </div>
+          </div>
+    </div>   
+                 
+                <div class="col s4">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/pagina1%20heros%20born2.jpg" >
+              <span class="card-title black-text text-deep"></span>
+            </div>
+            <div class="card-content">
+              <p> Primera pagina terminada</p>
+            </div>
+            <div class="card-action">
+              <a href="personajes.html"> proximamente a comic </a>
+            </div>
+          </div>
+    </div>   
+               
+            </div>
+       
+        </main>
+          <nav>
+  <div class="nav-wrapper  brown darken-3">
+    <a href="" class="brand-logo"></a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      
+    </ul>
+  </div>
+</nav>
+    </body>
+    
+<!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>    
+    <script type="text/javascript" src="js/materialize.min.js" ></script>
+    
+
+<script>
+     function login(){
+          console.log($("#user").val());
+              console.log($("#password").val());
+       
+    firebase.auth().signInWithEmailAndPassword($("#user").val(), $("#password").val()).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // [START_EXCLUDE]
+          if (errorCode === 'auth/wrong-password') {
+            alert('Wrong password.');
+          } else {
+            alert(errorMessage);
+          }
+          console.log(error);
+          document.getElementById('quickstart-sign-in');
+          // [END_EXCLUDE]
+        });
+        // [END authwithemail]
+      
+      document.getElementById('quickstart-sign-in');
+    
+     }
+    
+    
+firebase.auth().onAuthStateChanged(function(user){
+    if (user){
+    console.log("logged in: " + user.email);
+        $("#logout").slideDown();
+        $("#login").slideUp();
+        window.localStorage.setItem('user',user.email);
+    }else{
+        console.log("logged out");
+        $("#logout").slideUp();
+        $("#login").slideDown();
+        window.localStorage.setItem('user',false);
+    }
+    
+    
+});
+
+</script>
+
+   
+</html>

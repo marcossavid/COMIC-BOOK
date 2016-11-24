@@ -1,0 +1,23 @@
+.fondo{
+    background-image: url(../img/wp-universo-12.jpg)
+}   
+.lt{
+ @extend .blue, .lighten-4;
+}
+
+.tm{
+    width: 500px;
+    height: 350px;
+}
+.img1{
+    background-image: url(../img/hihi.jpg);
+}
+
+}
+  .flag1{
+                color: black;
+                border: none;
+                background-color: red;
+                padding: 10px 9px;
+            }
+            

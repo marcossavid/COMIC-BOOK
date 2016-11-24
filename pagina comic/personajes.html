@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> comicbook </title>
+	
+ 
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+    </head>
+	
+ 	
+    <body  class="fondo" >
+		
+        <header>
+   		
+  <ul id="dropdown1" class="dropdown-content" >
+<li><a href="#!">Noticias</a></li>
+  <li class="divider"></li>      
+  <li><a href="#!">Capitulos</a></li>
+  <li class="divider"></li>
+  <li><a href="#!">Acerca los autores</a></li>
+</ul>
+<nav>
+  <div class="nav-wrapper #000000 black" >
+	
+    <a href="#!" class="brand-logo">	 <li> <img src="img/logo2.png" whid="100px" ></li>  </a>
+    <ul class="right hide-on-med-and-down">
+         <li><a href="principal.html" >inicio</a></li>
+      <li><a href="galeriadearte.html">galeria de arte </a></li>
+      <li><a href="lector.html"> lector</a></li> 
+      
+        <!-- Dropdown Trigger -->
+      <li><a class="dropdown-button" href="#!" data-activates="dropdown1">comic<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav> 
+             <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+    </header >
+        
+        <main >
+            <div class="parallax-content">
+            <!img src="img/portada.png">
+            </div>
+   
+            
+    <div class="row">
+        <div class="col s2">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/shadow-1.png">
+              <span class="card-title">Shadow</span>
+            </div>
+            <div class="card-content">
+              <p>el emisario de la muerte en vida </p>
+            </div>
+            <div class="card-action">
+              <a href="#">shadow</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s2">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/kurt2.jpe">
+              <span class="card-title">Kurt</span>
+            </div>
+            <div class="card-content">
+              <p>  la fuerza que reside en tu interior</p>
+            </div>
+            <div class="card-action">
+              <a href="#">kurt</a>
+            </div>
+          </div>
+        </div>
+      
+           <div class="col s2">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/zen.jpg">
+              <span class="card-title">Zen</span>
+            </div>
+            <div class="card-content">
+              <p> la paz que reside dentro del caos  </p>
+            </div>
+            <div class="card-action">
+              <a href="#">Zen</a>
+            </div>
+          </div>
+        
+        </div>
+           <div class="col s2">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/Roma.jpg">
+              <span class="card-title">Roma</span>
+            </div>
+            <div class="card-content">
+              <p> la belleza de la destruccion  </p>
+            </div>
+            <div class="card-action">
+              <a href="#">Roma</a>
+            </div>
+          </div>
+        </div>
+            
+          
+           <div class="col s2">
+          <div class="card">
+            <div class="card-image">
+              <img src="img/glud.jpg">
+              <span class="card-title">Glud</span>
+            </div>
+            <div class="card-content">
+              <p> la fortaleza de los desconocido  </p>
+            </div>
+            <div class="card-action">
+              <a href="#">glud</a>
+            </div>
+          </div>
+        </div>
+            </div>
+            
+         
+
+            
+            
+            
+            
+        </main>
+    </body>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="source/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/javascript.js" ></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAht6UVlJc_Fo9fwxGqHR3I5x-aikUSio8",
+    authDomain: "comic-6db3d.firebaseapp.com",
+    databaseURL: "https://comic-6db3d.firebaseio.com",
+    storageBucket: "comic-6db3d.appspot.com",
+    messagingSenderId: "559279896200"
+  };
+  firebase.initializeApp(config);
+</script>
+
+   
+</html>
