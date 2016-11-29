@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
      <link href="css/stylessheet.css" rel="stylesheet" type="text/css" media="screen">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     
-    <script type="text/javascript" src="js/javascript.js" ></script>
+    
     
      <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
     
@@ -86,11 +87,12 @@
   <!-------------------------------------carrusel------------------>           
   <div style=" padding: 0px 75px; border: none;">
     <div class="carousel carousel-slider center" data-indicators="true " >
-    <div class="carousel-fixed-item center">
-      <a class="btn waves-effect waves-light"name="action">Me gusta<i class="material-icons right">thumb_up</i></a>
-        <a class="btn waves-effect waves-light red"name="action">No me gusta<i class="material-icons right">thumb_down</i></a>
-    </div>
+    <div class="carousel-fixed-item center" id="oculto">
+      <a  id="likes" class="btn waves-effect waves-light"name="action" onclick="megusta()">Me gusta<i class="material-icons right">thumb_up</i></a>
+        <button  id="dislikes" class="btn waves-effect waves-light red"name="action" onclick="nomegusta()">No me gusta<i class="material-icons right">thumb_down</i></a>
      
+     </div>
+      
  
     <div><a class="carousel-item  white-text" href="#one!"><img src="http://lorempixel.com/800/400/food/1"></a>
    
@@ -141,7 +143,6 @@
     </main>    
     </section>
     
-
     
     
     
@@ -158,7 +159,7 @@
                         </div>
                     </div>
                     <div class="col s2">
-                        <button class="btn waves-effect waves-light, right" type="submit" name="action" id="btn">
+                        <button class="btn waves-effect waves-light, right" type="submit" name="action" id="btn" onclick="activar()">
                             <i class="material-icons center">send</i>
                         </button>
                     </div>
@@ -195,33 +196,58 @@
     
       <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/script.js"></script>
+
    
     
-   <script>
-
-       function mostrar(){
-           console.log("anda");
-           document.getElementById('oculto').style.display = 'block';
-       }   
-
+   <script type="text/javascript">
+   
+    function mostrar(){
+        console.log("anda");
+        document.getElementById('oculto').style.display = 'block';
+       };
         var databaseservice =firebase.database();
         var referencia = databaseservice.ref("testRef");
-
-        function megusta(){
-            console.log("me gusta");
-
+       
+    
+    
+    function megusta(){
+            
+        console.log("me gusta");
+        if(typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount)+1;
+            } else {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("likes").innerHTML = localStorage.clickcount ;
+        } else {
+            document.getElementById("likes").innerHTML = "Sorry, your browser does not support web storage...";
         }
-        function nomegusta(){
+}
+        
+        
+    function nomegusta(){
             console.log("no me gusta");
-
+            
+       
+       
+        if(typeof(Storage1) !== "undefined") {
+            if (localStorage1.clickcount) {
+                localStorage1.clickcount = Number(localStorage1.clickcount)+1;
+            } else {
+                localStorage1.clickcount = 1;
+            }
+            document.getElementById("dislikes").innerHTML = localStorage1.clickcount ;
+        } else {
+            document.getElementById("dislikes").innerHTML = "Sorry, your browser does not support web storage...";
         }
-
-       function activar(){
+    }
+       
+    
+    function activar(){
            console.log("funciona")
-       }
-
+       
+    }
      $(document).ready(ver);
      
      function ver(){
@@ -236,10 +262,6 @@
          mostrar();
       }
      }
-     
-      
-        
-                                               
        
       
     </script>
