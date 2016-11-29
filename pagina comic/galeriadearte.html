@@ -167,7 +167,9 @@
             </div>
         </footer>
         </div>
+        
     </section>
+         <div id="tabla"></div>
         
         
         <nav>
@@ -229,25 +231,61 @@
     function nomegusta(){
             console.log("no me gusta");
             
-       
-       
-        if(typeof(Storage1) !== "undefined") {
-            if (localStorage1.clickcount) {
-                localStorage1.clickcount = Number(localStorage1.clickcount)+1;
-            } else {
-                localStorage1.clickcount = 1;
-            }
-            document.getElementById("dislikes").innerHTML = localStorage1.clickcount ;
+        if(typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
         } else {
-            document.getElementById("dislikes").innerHTML = "Sorry, your browser does not support web storage...";
+            sessionStorage.clickcount = 1;
         }
+            var qwe= sessionStorage.clickcount
+            window.localStorage.setItem("dislikes",qwe)
+        document.getElementById("dislikes").innerHTML =   window.localStorage.getItem("dislikes") ;
+    } else {
+        document.getElementById("dislikes").innerHTML = "Sorry, your browser does not support web storage...";
+    }
+       
     }
        
     
     function activar(){
-           console.log("funciona")
-       
+           var tabla=document.getElementById("tabla");
+    var comentario = document.getElementById("texto");
+    var datos =[];
+        
+        var comen = comentario.value || "";
+       if (!comen || !comen.trim().length){
+           console.log("debe ingresar un comentario ");
+           return;
+       }
+    comentario.value= "";
+        comentario.focus();
+        
+        var item = {
+            comentario: comen,
+            fecha : new Date()
+        };
+        datos.push(item)
+        window.localStorage.setItem("comentarios",item)
+        var datos1 = window.localStorage.getItem(comentario)
+        
+        while(tabla.childElementCount > 0){
+            tabla.removeChild(tabla.firstElementChild);
+        }
+       for(var i =0; i < datos.length;i++){
+           var elemento = datos[i]
+           var tr = document.createElement("tr");
+           var td1 = document.createElement("td");
+           
+           tr.appendChild(td1)
+           
+           td1.textContent=elemento.comentario;
+           
+           tabla.appendChild(tr);
+       }
     }
+    
+    
+    
      $(document).ready(ver);
      
      function ver(){
