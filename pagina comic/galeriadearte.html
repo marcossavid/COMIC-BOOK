@@ -245,13 +245,15 @@
     }
        
     }
-       
-    
-    function activar(){
-           var tabla=document.getElementById("tabla");
+         var tabla=document.getElementById("tabla");
     var comentario = document.getElementById("texto");
     var datos =[];
-        
+    
+     
+     
+    
+    function activar(){
+         
         var comen = comentario.value || "";
        if (!comen || !comen.trim().length){
            console.log("debe ingresar un comentario ");
@@ -283,12 +285,8 @@
            tabla.appendChild(tr);
        }
     }
-    //////////////////////////
+   
        
-       var array =localStorage.getItem(datos);
-       array.push(comentario);
-       localStorage.setItem("datos", datos);
-    
     
      $(document).ready(ver);
      
@@ -305,7 +303,7 @@
          
       }
      }
-       
+     
       
     </script>
     
