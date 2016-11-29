@@ -67,7 +67,7 @@
       <li><a href="principal.html" > Inicio</a></li>
       <li><a href="personajes.html" >Personajes</a></li>
       
-      <li><a href="lalala.html"> Lector</a></li> 
+      <li><a href="lector.html"> Lector</a></li> 
       
         <!-- Dropdown Trigger -->
       <li><a class="dropdown-button" href="#!" data-activates="dropdown1">comic<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -87,7 +87,7 @@
   <!-------------------------------------carrusel------------------>           
   <div style=" padding: 0px 75px; border: none;">
     <div class="carousel carousel-slider center" data-indicators="true " >
-    <div class="carousel-fixed-item center" id="oculto">
+    <div class="carousel-fixed-item center" id="oculto" >
       <a  id="likes" class="btn waves-effect waves-light"name="action" onclick="megusta()">Me gusta<i class="material-icons right">thumb_up</i></a>
         <button  id="dislikes" class="btn waves-effect waves-light red"name="action" onclick="nomegusta()">No me gusta<i class="material-icons right">thumb_down</i></a>
      
@@ -221,7 +221,7 @@
             } else {
                 localStorage.clickcount = 1;
             }
-            document.getElementById("likes").innerHTML = localStorage.clickcount ;
+            document.getElementById("likes").innerHTML = window.localStorage.clickcount ;
         } else {
             document.getElementById("likes").innerHTML = "Sorry, your browser does not support web storage...";
         }
@@ -229,7 +229,7 @@
         
         
     function nomegusta(){
-            console.log("no me gusta");
+            console.log("no me gusta")
             
         if(typeof(Storage) !== "undefined") {
         if (sessionStorage.clickcount) {
@@ -238,10 +238,10 @@
             sessionStorage.clickcount = 1;
         }
             var qwe= sessionStorage.clickcount
-            window.localStorage.setItem("dislikes",qwe)
+            localStorage.setItem("dislikes",qwe)
         document.getElementById("dislikes").innerHTML =   window.localStorage.getItem("dislikes") ;
     } else {
-        document.getElementById("dislikes").innerHTML = "Sorry, your browser does not support web storage...";
+        document.getElementById("dislikes").innerHTML = "NO  esta funcionando en este momento ";
     }
        
     }
@@ -265,8 +265,8 @@
             fecha : new Date()
         };
         datos.push(item)
-        window.localStorage.setItem("comentarios",item)
-        var datos1 = window.localStorage.getItem(comentario)
+        localStorage.setItem("datos",datos )
+        var datos1 = localStorage.getItem(comentarios)
         
         while(tabla.childElementCount > 0){
             tabla.removeChild(tabla.firstElementChild);
@@ -283,7 +283,11 @@
            tabla.appendChild(tr);
        }
     }
-    
+    //////////////////////////
+       
+       var array =localStorage.getItem(datos);
+       array.push(comentario);
+       localStorage.setItem("datos", datos);
     
     
      $(document).ready(ver);
@@ -292,12 +296,13 @@
         
       var user = window.localStorage.getItem('user'); 
        console.log(user);
-       if (user = false){
+       if (user){
          console.log("estan");
-       
+        mostrar();
         
       }else{
-         mostrar();
+        document.getElementById("oculto").style.display= "none";
+         
       }
      }
        
